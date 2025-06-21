@@ -1,7 +1,8 @@
-import streamlit as st
-import requests
-import pandas as pd
 import os
+
+import pandas as pd
+import requests
+import streamlit as st
 
 # Load backend API URL from environment variable
 backend_api_url = os.getenv("BACKEND_API_URL", "http://backend:8000/users")
@@ -37,8 +38,7 @@ if st.session_state.selected_option == "create":
             if name and email:
                 try:
                     response = requests.post(
-                        backend_api_url,
-                        json={"name": name, "email": email}
+                        backend_api_url, json={"name": name, "email": email}
                     )
                     response.raise_for_status()
                     st.success("User created successfully!")

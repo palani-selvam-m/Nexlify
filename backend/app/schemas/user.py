@@ -1,16 +1,20 @@
-from pydantic import BaseModel, EmailStr
 from datetime import datetime
-from typing import Optional
+
+from pydantic import BaseModel, EmailStr
+
 
 class UserBase(BaseModel):
     name: str
     email: EmailStr
 
+
 class UserCreate(UserBase):
     pass
 
+
 class UserUpdate(UserBase):
     pass
+
 
 class User(BaseModel):
     id: int
