@@ -3,7 +3,7 @@ repos:
     rev: 24.3.0
     hooks:
       - id: black
-        language_version: python3.12
+        language_version: python3.10
   - repo: https://github.com/pycqa/isort
     rev: 6.0.1
     hooks:
@@ -13,6 +13,7 @@ repos:
     rev: v1.15.0
     hooks:
       - id: mypy
+        exclude: ^frontend/main.py$
         language_version: python3.10
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.3.0

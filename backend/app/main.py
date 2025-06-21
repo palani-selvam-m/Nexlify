@@ -1,10 +1,12 @@
-from fastapi import FastAPI
-from app.routes import user
 from app.database import engine
 from app.models import user as user_model
+from app.routes import user
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="Nexlify Backend", description="User Management API", version="0.1.0")
+app = FastAPI(
+    title="Nexlify Backend", description="User Management API", version="0.1.0"
+)
 
 # Create database tables
 user_model.Base.metadata.create_all(bind=engine)
@@ -20,6 +22,7 @@ app.add_middleware(
 
 # Include user routes
 app.include_router(user.router, prefix="/users", tags=["Users"])
+
 
 @app.get("/")
 async def root():
