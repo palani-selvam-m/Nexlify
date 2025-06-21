@@ -1,0 +1,11 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+RUN pip install uv
+COPY pyproject.toml .
+RUN uv sync
+
+COPY . .
+
+CMD ["uv", "run", "streamlit", "run", "main.py", "--server.port", "8501", "--server.address", "0.0.0.0"]

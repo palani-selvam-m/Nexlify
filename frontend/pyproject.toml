@@ -1,0 +1,11 @@
+[project]
+name = "nexlify-frontend"
+version = "0.1.0"
+description = "Streamlit frontend for Nexlify"
+dependencies = [
+    "streamlit>=1.39.0",
+    "requests>=2.32.3",
+    "pandas>=2.3.0",
+]
+[tool.uv]
+python = "3.10"

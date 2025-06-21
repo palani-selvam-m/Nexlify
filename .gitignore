@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+backend/.venv/
+frontend/.venv/
+
+# Docker
+docker-compose.override.yml
+*.log
+postgres_data/
+
+# IDEs
+.vscode/
+.idea/
+
+# Misc
+*.DS_Store
+*.swp
+*.swo
+*.bak
+.env
+.python-version
